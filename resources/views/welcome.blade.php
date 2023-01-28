@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel en otra rama</title>
+        <title>Laravel en otra rama super</title>
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
         </style>
     </head>
     <body class="antialiased">
-        <p>hola orion</p>
+        <p>hola orion yes</p>
         <p>modificacion rama orion 1</p>
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
