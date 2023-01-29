@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Marca;
+use App\Models\Compra;
 use Illuminate\Http\Request;
 
-class MarcaController extends Controller
+class CompraController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class MarcaController extends Controller
      */
     public function index()
     {
-        return Marca::where('estado',1)->get();
+        return ["compras"];
     }
 
     /**
@@ -25,47 +25,40 @@ class MarcaController extends Controller
      */
     public function store(Request $request)
     {
-        $Marca = new Marca();
-        $Marca->nombre = $request->nombre;
-        $Marca->save();
-        return $Marca;
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Marca  $marca
+     * @param  \App\Models\Compra  $compra
      * @return \Illuminate\Http\Response
      */
-    public function show(Marca $marca)
+    public function show(Compra $compra)
     {
-        return $marca;
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Marca  $marca
+     * @param  \App\Models\Compra  $compra
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Marca $marca)
+    public function update(Request $request, Compra $compra)
     {
-        $marca->nombre = $request->nombre;
-        $marca->save();
-        return $marca;
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Marca  $marca
+     * @param  \App\Models\Compra  $compra
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Marca $marca)
+    public function destroy(Compra $compra)
     {
-        $marca->estado = 0;
-        $marca->save();
-        return $marca;
+        //
     }
 }

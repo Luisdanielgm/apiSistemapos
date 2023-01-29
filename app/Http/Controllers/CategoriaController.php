@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Marca;
+use App\Models\Categoria;
 use Illuminate\Http\Request;
 
-class MarcaController extends Controller
+class CategoriaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class MarcaController extends Controller
      */
     public function index()
     {
-        return Marca::where('estado',1)->get();
+        return Categoria::where('estado',1)->get();
     }
 
     /**
@@ -25,47 +25,47 @@ class MarcaController extends Controller
      */
     public function store(Request $request)
     {
-        $Marca = new Marca();
-        $Marca->nombre = $request->nombre;
-        $Marca->save();
-        return $Marca;
+        $Categoria = new Categoria();
+        $Categoria->nombre = $request->nombre;
+        $Categoria->save();
+        return $Categoria;
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Marca  $marca
+     * @param  \App\Models\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function show(Marca $marca)
+    public function show(Categoria $categoria)
     {
-        return $marca;
+        return $categoria;
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Marca  $marca
+     * @param  \App\Models\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Marca $marca)
+    public function update(Request $request, Categoria $categoria)
     {
-        $marca->nombre = $request->nombre;
-        $marca->save();
-        return $marca;
+        $categoria->nombre = $request->nombre;
+        $categoria->save();
+        return $categoria;
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Marca  $marca
+     * @param  \App\Models\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Marca $marca)
+    public function destroy(Categoria $categoria)
     {
-        $marca->estado = 0;
-        $marca->save();
-        return $marca;
+        $categoria->estado = 0;
+        $categoria->save();
+        return $categoria;
     }
 }

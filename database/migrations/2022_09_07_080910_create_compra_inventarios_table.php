@@ -13,15 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('compra_inventarios', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre')->nullable();
-            $table->string('username')->nullable();
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->integer('tipo')->default(1);
-            $table->integer('estado')->default(1);
+            $table->foreignId('inventario_id')->nullable()->constrained('inventarios');
+            $table->foreignId('compra_id')->nullable()->constrained('compras');
 
+            $table->decimal('precio',8,2)->default(0); 
+
+            $table->decimal('cantidad',8,2)->default(0);
+
+            $table->integer('estado')->default(1);
             $table->timestamps();
         });
     }
@@ -33,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('compra_inventarios');
     }
 };
