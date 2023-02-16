@@ -12,6 +12,7 @@ Route::group(['prefix' => 'api'], function () {
     Route::apiResource('/series', 'SerieController');
     Route::apiResource('/compraInventarios', 'CompraInventarioController');
     Route::apiResource('/cajaMovimientos', 'CajaMovimientoController');
+    Route::get('/inventarios/kardex/{articulo}', 'InventarioController@kardex');
     Route::apiResource('/inventarios', 'InventarioController');
     Route::apiResource('/metodos', 'MetodoController');
     Route::apiResource('/sucursals', 'SucursalController');
