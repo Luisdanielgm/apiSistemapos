@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'api'], function () {
+    Route::post('/login', 'UserController@login');
+    Route::apiResource('/users', 'UserController');
     Route::apiResource('/marcas', 'MarcaController');
     Route::apiResource('/medidas', 'MedidaController');
     Route::apiResource('/categorias', 'CategoriaController');
